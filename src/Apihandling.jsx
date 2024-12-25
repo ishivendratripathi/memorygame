@@ -21,9 +21,16 @@ const Apihandling = () => {
     axios.get("https://digimon-api.vercel.app/api/digimon")
     .then(function (response) {
       const newshuffled=sufflearray(response.data)
+      console.log(response.data)
       setData(newshuffled)
     })
   },[])
+
+  const handlingclick = (name) => {
+    const handler=data.filter((a)=>a.name!==name);
+    setData(handler)
+
+  }
 
   return (
     <>
@@ -33,7 +40,8 @@ const Apihandling = () => {
   <>
   <button
   key={index}
-  className="relative h-48 w-48 border-2 border-black flex flex-col items-center justify-center p-2 rounded overflow-hidden shadow-2xl group hover:text-white hover:shadow-black"
+  onClick={()=>handlingclick(a.name)}
+  className="relative h-48 w-48 border-2 border-black flex flex-col items-center justify-center p-2 rounded overflow-hidden shadow-2xl group hover:text-white hover:shadow-black hover:scale-110"
 >
   <span className="absolute left-0 -ml-2 h-48 w-48 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-gray-900 transition-all duration-300 group-hover:-rotate-180"></span>
   <img
