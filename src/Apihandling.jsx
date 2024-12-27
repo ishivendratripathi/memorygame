@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from 'react'
 const Apihandling = () => {
 
   const [data, setData] = useState([]);
-  const [counter,setcounter]=useState(0)
+
   const sufflearray = (Array) => {
     const copyshuffle=[...Array]
     for(let i=copyshuffle.length-1;i>0;i--){
@@ -36,7 +36,6 @@ if(data.clicked){
     <>
       <div className='text-center font-extrabold text-3xl text-rose-600'>IS YOUR MEMORY GOOD?</div>
       <div className='text-xl text-blue-600'>DON'T TAP THE SAME CARD ELSE YOU WILL LOSE</div>    
-        <div >CURRENT COUNTER IS :{counter}</div>
       <div className='flex flex-wrap m-6 gap-6'>{data.map((a , index)=>
   <>
   <button
