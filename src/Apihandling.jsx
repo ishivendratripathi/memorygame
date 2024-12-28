@@ -4,6 +4,8 @@ import React, { useEffect, useState, useRef } from 'react'
 const Apihandling = () => {
 
   const [data, setData] = useState([]);
+  const [counter,setcounter]=useState(0);
+  const [prev,setprev]=useState("You Will Create the score BUD")
 
   const sufflearray = (Array) => {
     const copyshuffle=[...Array]
@@ -24,18 +26,17 @@ const Apihandling = () => {
   const handlingclick = (name) => {
     const handler=sufflearray(data)
     setData(handler)
-    
+    setcounter(counter+1)
+    setprev(counter+1)
+ 
   }
-const clicklogic = (clicked) => {
-if(data.clicked){
-  console.log("this game is over")
-}
-}
 
   return (
     <>
       <div className='text-center font-extrabold text-3xl text-rose-600'>IS YOUR MEMORY GOOD?</div>
       <div className='text-xl text-blue-600'>DON'T TAP THE SAME CARD ELSE YOU WILL LOSE</div>    
+      <div>CURRENT SCORE : {counter}</div>
+      <div>Best score is : {prev}</div>
       <div className='flex flex-wrap m-6 gap-6'>{data.map((a , index)=>
   <>
   <button
