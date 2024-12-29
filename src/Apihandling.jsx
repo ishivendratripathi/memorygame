@@ -33,7 +33,7 @@ const Apihandling = () => {
 
   return (
     <>
-      <div className='text-center font-extrabold text-3xl text-rose-600'>IS YOUR MEMORY GOOD?</div>
+      <div className='text-center font-extrabold text-3xl text-rose-600'>IS YOUR MEMORY GOOD?- let's find out</div>
       <div className='text-xl text-blue-600'>DON'T TAP THE SAME CARD ELSE YOU WILL LOSE</div>    
       <div>CURRENT SCORE : {counter}</div>
       <div>Best score is : {prev}</div>
